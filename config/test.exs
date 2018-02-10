@@ -4,7 +4,12 @@ use Mix.Config
 # you can enable the server option below.
 config :mango, MangoWeb.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
+
+config :hound, driver: "chrome_driver"
+# use phantomjs as driver instead of chrome_driver
+# if you're using chrome_driver, you have to download chrome_driver
+# from https://sites.google.com/a/chromium.org/chromedriver/downloads
 
 # Print only warnings and errors during test
 config :logger, level: :warn
