@@ -12,4 +12,19 @@ defmodule Mango.CRM do
     |> build_customer
     |> Repo.insert
   end
+
+  def get_customer_by_email(email) do
+    Repo.get_by(Customer, email: email)
+  end
+
+  def get_customer_by_credentials(%{"email" => email, "password" => pass}) do
+    customer = get_customer_by_email(email)
+
+    cond do
+      customer && Cameonin.Bcrypt.checkpw(pass, customer.password_hash) ->
+        customer
+      true ->
+        :error
+    end
+  end
 end
