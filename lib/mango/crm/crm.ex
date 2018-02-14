@@ -21,7 +21,7 @@ defmodule Mango.CRM do
     customer = get_customer_by_email(email)
 
     cond do
-      customer && Cameonin.Bcrypt.checkpw(pass, customer.password_hash) ->
+      customer && Comeonin.Bcrypt.checkpw(pass, customer.password_hash) ->
         customer
       true ->
         :error
