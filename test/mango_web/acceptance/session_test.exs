@@ -9,7 +9,7 @@ defmodule MangoWeb.Acceptance.SessionTest do
     valid_attrs = %{
       "name" => "John",
       "email" => "john@example.com",
-      "passowrd" => "secret",
+      "password" => "secret",
       "residence_area" => "Area 1",
       "phone" => "1111"
     }
